@@ -1,22 +1,254 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+:root {
+  --color-primary: #161a42;
+  --tran-md: all ease-in-out 0.3s;
+  --lin-grad: linear-gradient(to bottom, #3d5ffd, #7f55ec);
+  --color-light: rgb(95, 95, 95);
+}
+
+* {
+  color: white;
+}
+/*utilities*/
+
+.bg-primary {
+  background-color: #161a42;
+}
+
+.color-white {
+  color: #fff;
+}
 body {
   background-color: #111827;
 }
 
 .filter-container {
   height: 100vh;
-  margin: 2rem 0;
+  margin: 0 0;
 }
 
+.filter-list {
+  border: none;
+}
 .list-button {
   transition: all ease-in-out 0.3s;
+  border: 1px solid #585858;
+  border-radius: 30px;
+  padding: 0.5rem;
+  min-width: 80px;
+  margin-bottom: 0.5rem;
 }
 
 .list-button:hover,
 .list-button.active {
-  background-color: #374151;
-  color: rgb(214, 214, 214) !important;
+  background-color: #ff457d;
+  color: white !important;
+  border-color: #ff457d;
+}
+/*#2E357B*/
+
+/*navbar*/
+
+.navbar-container {
+  background-color: #161a42;
+}
+
+.custom-list {
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.custom-navbar-link {
+  position: relative;
+  height: 100%;
+  color: white;
+}
+.custom-navbar-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.8rem;
+  left: 10%;
+  height: 9%;
+  width: 80%;
+  background-color: #1e6cca;
+}
+
+.account-address {
+  color: wheat;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.account-address span {
+  color: gray;
+}
+
+.user-button {
+  border-left: 1px solid rgba(255, 255, 255, 0.466);
+  padding-left: 1rem;
+}
+
+.theme-button {
+  border-right: 1px solid #fff;
+  padding-right: 1rem;
+  background: transparent !important;
+}
+
+.dropdown-item {
+  transition: all ease-in-out 0.3s;
+  color: white;
+  display: flex;
+}
+
+.dropdown-item svg {
+  margin-right: 0.5rem;
+}
+
+.dropdown-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+}
+
+.dropdown-item:hover {
+  color: #161a42;
+}
+
+/*toggler style*/
+
+/*header component*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 80%;
+  justify-content: center;
+  margin-top: 0 !important;
+}
+.header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+}
+
+.header-button {
+  background-color: #161a42;
+  margin: 1rem 1rem 0 0;
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  border-radius: 20px;
+  font-weight: 300;
+  transition: var(--tran-md);
+}
+
+.header-button:not(:first-of-type) {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.header-button:not(:first-of-type):hover {
+  background-color: var(--color-primary);
+}
+
+.header-button.active {
+  background: var(--lin-grad);
+}
+
+/*top card section */
+
+.top-card div {
+  background-color: var(--color-primary);
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-card-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  outline: 1 px solid white;
+  outline-offset: 2px;
+}
+.top-card-img-container {
+  border-radius: 50%;
+  outline: 1px solid #ffb8b8;
+  outline-offset: 6px;
+}
+
+.buy-button {
+  background-image: var(--lin-grad);
+  padding: 0.5rem 0;
+  border-radius: 18px;
+  transition: var(--tran-md);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.buy-button:focus {
+  transform: translateY(0px);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.13);
+}
+
+.buy-button.wide {
+  width: 15rem;
+}
+
+.buy-button.medium {
+  width: 12rem;
+}
+.feature-card {
+  margin-bottom: 3rem;
+}
+.feature-icon-container svg {
+  font-size: 3rem;
+}
+
+/*Category Section*/
+
+.nft-card {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.nft-details {
+  display: flex;
+}
+
+.nft-details img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.ntf-card-img img {
+  border-radius: 10px;
+}
+.open-icon svg {
+  margin-left: auto;
+  display: block;
+  border: 1px solid #2e357b;
+  padding: 0.5rem;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.nft-card-container .account-address {
+  border-bottom: 1px solid var(--color-light);
+  padding-bottom: 1rem;
 }
