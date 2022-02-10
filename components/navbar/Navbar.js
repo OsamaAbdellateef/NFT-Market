@@ -4,9 +4,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
+  { name: "create NFT", href: "createNFT", current: false },
   { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -62,7 +61,7 @@ const Navbar = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/*Theme Toggler*/}
-                <p>theme toggler </p>
+
                 {/* Profile dropdown */}
                 <Menu as="div" className="user-button ml-3 relative">
                   <div>

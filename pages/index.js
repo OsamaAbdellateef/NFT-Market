@@ -30,7 +30,7 @@ export default function Home() {
   }, [category]);
 
   return (
-    <div className="filter-container container    mx-auto px-8 md:ml-16">
+    <div className="filter-container container mx-auto px-8 md:ml-16">
       <Header />
       <TopNewest />
       <Features />

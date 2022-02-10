@@ -12,6 +12,7 @@ body {
 
 :root {
   --color-primary: #161a42;
+  --color-primary-light: #212760;
   --tran-md: all ease-in-out 0.3s;
   --lin-grad: linear-gradient(to bottom, #3d5ffd, #7f55ec);
   --color-light: rgb(95, 95, 95);
@@ -26,15 +27,36 @@ body {
   background-color: #161a42;
 }
 
+.bg-primary-light {
+  background-color: var(--color-primary-light) !important;
+}
+
 .color-white {
   color: #fff;
 }
+
+form label {
+  color: white !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-container,
+  .custom-footer {
+    padding: 1rem;
+  }
+}
+
 body {
   background-color: #111827;
 }
 
 .filter-container {
-  height: 100vh;
   margin: 0 0;
 }
 
@@ -208,7 +230,7 @@ body {
 }
 
 .buy-button.medium {
-  width: 12rem;
+  width: 8rem;
 }
 .feature-card {
   margin-bottom: 3rem;
@@ -251,4 +273,45 @@ body {
 .nft-card-container .account-address {
   border-bottom: 1px solid var(--color-light);
   padding-bottom: 1rem;
+}
+
+/*Footer*/
+
+.custom-footer {
+  background-color: #2d3582;
+}
+
+/*bread crumb container */
+
+.breadcrumb-container {
+  border-bottom: 1px solid var(--color-light);
+}
+
+/*Form section*/
+
+.submit-button {
+  background: var(--lin-grad);
+  padding: 0.8rem 2.5rem;
+  border-radius: 20px;
+}
+
+.price-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.price-container input:focus {
+  outline: none;
+}
+
+.eth {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-46%);
+  /* height: 100%; */
+  right: 6px;
+  background-color: var(--color-primary-light);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 25px;
 }

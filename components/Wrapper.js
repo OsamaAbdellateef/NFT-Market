@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import Footer from "./Footer";
 import Navbar from "./navbar/Navbar";
 
 const Wrapper = ({ children }) => {
@@ -14,8 +15,9 @@ const Wrapper = ({ children }) => {
         />
       </Head>
       <Navbar />
-      {children}
-      <footer></footer>
+
+      <div className="main-container sm:px-10 lg:px-20">{children}</div>
+      <Footer />
     </div>
   );
 };
