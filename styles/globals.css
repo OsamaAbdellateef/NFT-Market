@@ -391,6 +391,14 @@ body {
   width: 88%;
 }
 
+.test {
+  outline: none !important;
+}
+
+.upload-img-button:focus {
+  outline: none !important;
+}
+
 /*media queries */
 
 @media only screen and (max-width: 767px) {

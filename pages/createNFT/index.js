@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthernet } from "@fortawesome/free-solid-svg-icons";
 
 const CreatNFT = () => {
+  const [selectedImage, setSelectedImage] = useState();
+  const imageHandler = (e) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setSelectedImage(reader.result);
+      }
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
+  useEffect(() => {
+    // create the preview
+    console.log(selectedImage);
+  }, []);
+
   return (
     <div>
       <Breadcrumb links={["home", "createNFT"]} />
-
+      <butotn
+        onClick={() => {
+          console.log(selectedImage);
+        }}
+      >
+        log current file{" "}
+      </butotn>
       <div className=" py-4 ">
         {/*Form*/}
         <h1 className="mb-6 font-semibold text-4xl">Create Your NFT</h1>
@@ -88,17 +109,19 @@ const CreatNFT = () => {
                       <label
                         style={{ background: "none" }}
                         htmlFor="file-upload"
-                        className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                        className="test relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                       >
                         <span
                           style={{
                             fontWeight: "bold",
                             textDecoration: "underline",
                           }}
+                          className="upload-img-button"
                         >
-                          Upload a file
+                          Upload an image
                         </span>
                         <input
+                          onChange={imageHandler}
                           id="file-upload"
                           name="file-upload"
                           type="file"
@@ -112,6 +135,11 @@ const CreatNFT = () => {
                     </p>
                   </div>
                 </div>
+                {selectedImage && (
+                  <div className="mb-20" style={{ height: "200px" }}>
+                    <img src={selectedImage} alt="Thumb" />{" "}
+                  </div>
+                )}
               </div>
               <div className="mb-6">
                 <label
