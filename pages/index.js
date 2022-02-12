@@ -5,6 +5,7 @@ import Category from "../components/Category";
 import Header from "../components/Header";
 import TopNewest from "../components/TopNewest";
 import Features from "../components/Features";
+import useDarkMode from "../components/useDarkMode";
 
 const mainData = [
   { name: "iPhone", category: "design" },
@@ -28,12 +29,19 @@ export default function Home() {
       setData(filteredData);
     }
   }, [category]);
-
+  useDarkMode();
   return (
-    <div className="filter-container container mx-auto px-8 md:ml-16">
+    <div className="filter-container container mx-auto lg:px-8 ">
+      <div className="background"></div>
+
       <Header />
       <TopNewest />
       <Features />
+
+      <h1 className="mb-10 font-semibold text-4xl text-primary dark:text-white text">
+        Explore all NFTs and Start to Collect
+      </h1>
+
       <Category />
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEthernet } from "@fortawesome/free-solid-svg-icons";
 
 const CreatNFT = () => {
   const [selectedImage, setSelectedImage] = useState();
+  const [currentImageName, setCurrentImageName] = useState("");
+
   const imageHandler = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -12,7 +12,10 @@ const CreatNFT = () => {
         setSelectedImage(reader.result);
       }
     };
-    reader.readAsDataURL(e.target.files[0]);
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]);
+      setCurrentImageName(e.target.files[0].name);
+    }
   };
   useEffect(() => {
     // create the preview
@@ -22,46 +25,42 @@ const CreatNFT = () => {
   return (
     <div>
       <Breadcrumb links={["home", "createNFT"]} />
-      <butotn
-        onClick={() => {
-          console.log(selectedImage);
-        }}
-      >
-        log current file{" "}
-      </butotn>
+
       <div className=" py-4 ">
         {/*Form*/}
-        <h1 className="mb-6 font-semibold text-4xl">Create Your NFT</h1>
-        <p className="mb-8">
+        <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white">
+          Create Your NFT
+        </h1>
+        <p className="mb-8 text-primary dark:text-white">
           This is a descriptive sub-headline that introduces the whole content
         </p>
 
         <form>
-          <div className=" grid xs:grid-cols-1 md:grid-cols-2 gap-40">
+          <div className=" grid xs:grid-cols-1 md:grid-cols-2 gap-40 items-center">
             <div className="">
-              <div class="mb-6">
+              <div className="mb-6">
                 <label
-                  for="NFT-title"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  htmlFor="NFT-title"
+                  className="block mb-2 text-sm font-medium text-primary dark:text-white "
                 >
                   NFT Title
                 </label>
                 <input
                   type="text"
                   id="NFT-title"
-                  class="bg-primary-light border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-primary-light border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
 
               <label
-                for="countries"
-                class="block mb-2 text-sm font-medium text-white"
+                htmlFor="countries"
+                className="block mb-2 text-sm font-medium text-white"
               >
                 Chose Category
               </label>
               <select
                 id="countries"
-                class="bg-primary-light mb-6 bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-primary-light mb-6 bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option>United States</option>
                 <option>Canada</option>
@@ -69,10 +68,10 @@ const CreatNFT = () => {
                 <option>Germany</option>
               </select>
 
-              <div class="mb-6">
+              <div className="mb-6">
                 <label
-                  for="price"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  htmlFor="price"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Price
                 </label>
@@ -80,13 +79,13 @@ const CreatNFT = () => {
                   <input
                     type="number"
                     id="price"
-                    class="bg-primary-light price-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-primary-light price-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                   <span className="eth">ETH</span>
                 </div>
               </div>
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 ">
                   upload photo
                 </label>
                 <div className="bg-primary-light mt-1 mb-8 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -105,18 +104,21 @@ const CreatNFT = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <div className="flex text-sm text-gray-600">
+
+                    <div className="flex justify-center text-sm text-gray-600">
                       <label
-                        style={{ background: "none" }}
+                        style={{
+                          background: "none",
+                        }}
                         htmlFor="file-upload"
-                        className="test relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                        className="test relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 "
                       >
                         <span
                           style={{
                             fontWeight: "bold",
                             textDecoration: "underline",
                           }}
-                          className="upload-img-button"
+                          className="upload-img-button "
                         >
                           Upload an image
                         </span>
@@ -128,30 +130,32 @@ const CreatNFT = () => {
                           className="sr-only"
                         />
                       </label>
-                      <p className="pl-1">or drag and drop</p>
                     </div>
+                    <p className="text-md ">
+                      {currentImageName && currentImageName}
+                    </p>
                     <p className="text-xs text-gray-500">
                       PNG, JPG, GIF up to 10MB
                     </p>
                   </div>
                 </div>
                 {selectedImage && (
-                  <div className="mb-20" style={{ height: "200px" }}>
+                  <div className="mb-20">
                     <img src={selectedImage} alt="Thumb" />{" "}
                   </div>
                 )}
               </div>
               <div className="mb-6">
                 <label
-                  for="message"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                 >
                   Your message
                 </label>
                 <textarea
                   id="message"
                   rows="4"
-                  class="bg-primary-light block p-2.5 w-full text-sm text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 row-span-6 col-span-6 "
+                  className="bg-primary-light block p-2.5 w-full text-sm text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 row-span-6 col-span-6 "
                   placeholder="Leave a comment..."
                 ></textarea>
                 <input

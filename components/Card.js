@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import BuyButton from "./BuyButton";
+import Popup from "./Popup";
 
-const Card = ({ item }) => {
+const Card = ({ item, img, buttonText }) => {
   return (
     <motion.div className="nft-card" layout>
       <div className="nft-card-container">
         <div className="ntf-card-img ">
-          <img src="./nft-card-img.png" />
+          <img src={`./img2.png`} />
         </div>
         <div className="nft-details mt-5 grid ">
           <div className="nft-name grow">
@@ -34,7 +35,7 @@ const Card = ({ item }) => {
         </div>
       </div>
       <div style={{ textAlign: "center" }} className="buy-container">
-        <BuyButton medium />
+        <Popup />
       </div>
     </motion.div>
   );

@@ -5,7 +5,7 @@ import Navbar from "./navbar/Navbar";
 
 const Wrapper = ({ children }) => {
   return (
-    <div>
+    <div className="transition duration-300 ease-in-out bg-white dark:bg-primary ">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -28,10 +28,7 @@ export default function Home() {
 
   return (
     <div className="filter-container container  mx-auto  mt-2">
-      <h1 className="mb-10 font-semibold text-4xl">
-        Explore all NFTs and Start to Collect
-      </h1>
-      <ul className="filter-list flex flex-wrap border-b border-gray-200 dark:border-gray-700">
+      <ul className=" mt-10 filter-list flex flex-wrap border-b border-gray-200 dark:border-gray-700">
         <li className="mr-2">
           <button
             href="#"
@@ -89,8 +86,8 @@ export default function Home() {
         animate={{ y: 30 }}
         className="mt-4 grid sm-grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-4"
       >
-        {data.map((d) => (
-          <Card key={Math.random()} item={d} />
+        {data.map((d, index) => (
+          <Card key={Math.random()} img={`img${index + 1}.png`} item={d} />
         ))}
       </motion.div>
     </div>

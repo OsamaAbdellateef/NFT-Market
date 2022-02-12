@@ -1,10 +1,14 @@
 import React from "react";
 
-const BuyButton = ({ wide, medium }) => {
+const BuyButton = ({ wide, buttonText, medium, ...props }) => {
   return (
-    <div>
-      <button div className={`buy-button ${wide ? "wide" : "medium"}`}>
-        Buy Now
+    <div style={{ display: "inline-block" }}>
+      <button
+        {...props}
+        div
+        className={`buy-button ${wide ? "wide" : "medium"}`}
+      >
+        {buttonText ? buttonText : "Buy Now"}
       </button>
     </div>
   );

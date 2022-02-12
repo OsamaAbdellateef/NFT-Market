@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+html.light .feature-container.breadcrumb-container path {
+  color: red;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -27,16 +31,27 @@ body {
   background-color: #161a42;
 }
 
+.button-primary {
+  background: var(--lin-grad);
+  padding: 0.5rem 0;
+  min-width: 150px;
+  color: white;
+  border-radius: 20px;
+  transition: all ease-in-out 0.2s;
+  outline: none;
+}
+
+.button-primary-hover:hover,
+.button-primary-hover:focus {
+  box-shadow: 0 0 8px 5px var(--color-primary);
+}
+
 .bg-primary-light {
   background-color: var(--color-primary-light) !important;
 }
 
 .color-white {
   color: #fff;
-}
-
-form label {
-  color: white !important;
 }
 
 input:focus,
@@ -141,6 +156,17 @@ body {
 
 /*toggler style*/
 
+.main-container {
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1000;
+  background-image: url("../public/header.png");
+}
 /*header component*/
 
 .header {
@@ -151,14 +177,8 @@ body {
   justify-content: center;
   margin-top: 0 !important;
 }
-.header h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 3.6rem;
-}
 
 .header-button {
-  background-color: #161a42;
   margin: 1rem 1rem 0 0;
   padding: 0.5rem 1rem;
   width: 8rem;
@@ -168,7 +188,6 @@ body {
 }
 
 .header-button:not(:first-of-type) {
-  background-color: transparent;
   border: 1px solid #fff;
 }
 
@@ -182,8 +201,14 @@ body {
 
 /*top card section */
 
+.top-card div:first-child {
+  background-image: url(../public/top.png);
+  background-size: contain;
+  background-position: left;
+  background-repeat: none;
+}
+
 .top-card div {
-  background-color: var(--color-primary);
   border: none;
   text-align: center;
   display: flex;
@@ -206,7 +231,7 @@ body {
 
 .buy-button {
   background-image: var(--lin-grad);
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.8rem;
   border-radius: 18px;
   transition: var(--tran-md);
   transform: translateY(-2px);
@@ -219,7 +244,8 @@ body {
 }
 
 .buy-button.wide {
-  width: 15rem;
+  max-width: 10rem;
+  min-width: 7rem;
 }
 
 .buy-button.medium {
@@ -252,6 +278,7 @@ body {
 
 .ntf-card-img img {
   border-radius: 10px;
+  width: 100%;
 }
 .open-icon svg {
   margin-left: auto;
@@ -302,7 +329,7 @@ body {
   top: 50%;
   transform: translateY(-46%);
   /* height: 100%; */
-  right: 6px;
+  right: 2px;
   background-color: var(--color-primary-light);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -399,12 +426,112 @@ body {
   outline: none !important;
 }
 
+/*currency details section */
+
+.currency {
+  background: linear-gradient(to bottom, #161a42, #0d0f23);
+  border-radius: 5px;
+}
+
+.buynow {
+  background: var(--lin-grad);
+}
+
+.buynow,
+.share {
+  margin-top: 1rem;
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.5rem 3rem;
+  border-radius: 20px;
+  min-width: 180px;
+}
+
+.share {
+  transition: var(--tran-md);
+  border: 1px solid #505cf8;
+}
+.share:hover,
+.share:focus {
+  background-color: #505bf877;
+}
+
+.show-more {
+  transition: var(--tran-md);
+}
+
+.show-more:hover {
+  color: rgb(104, 104, 255);
+}
+
+/*Popup*/
+/*
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.863);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.4s;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay.hidden form {
+  transform: scale(0);
+}
+
+.overlay form {
+  min-width: 310px;
+  min-height: 300px;
+  transform: var(--tran-md);
+  background-color: var(--color-primary-light);
+}
+
+.close-button {
+  background: #7e89f3;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0.1rem;
+  font-size: -3.8rem;
+  color: green;
+  cursor: pointer;
+  transition: var(--tran-md);
+}
+*/
 /*media queries */
 
 @media only screen and (max-width: 767px) {
+  .account-address.hide {
+    display: none !important;
+  }
+
   .main-container,
   .custom-footer {
     padding: 1rem;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .header h1 {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    line-height: 3rem;
+  }
+  .header p {
+    font-size: 1.1rem !important;
+    font-weight: 200;
   }
 }
 
@@ -420,5 +547,9 @@ body {
   .slider {
     min-height: 250px;
     transform: translateX(15px);
+  }
+
+  .custom-flex-wrap {
+    flex-direction: column !important;
   }
 }
