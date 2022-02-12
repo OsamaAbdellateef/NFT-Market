@@ -38,7 +38,7 @@ export default function Home() {
       <TopNewest />
       <Features />
 
-      <h1 className="mb-10 font-semibold text-4xl text-primary dark:text-white text">
+      <h1 className="mb-10 font-semibold text-4xl text-primary dark:text-white responsive-header-sm text">
         Explore all NFTs and Start to Collect
       </h1>
 

@@ -3,10 +3,7 @@ import BuyButton from "./BuyButton";
 
 const TopCard = () => {
   return (
-    <div
-      className="top-card text-primary"
-      style={{ backgroundImage: "./top.png" }}
-    >
+    <div className="top-card text-primary">
       <div
         href="#"
         className="block p-6 max-w-sm bg-primary dark:bg-white  rounded-lg border border-gray-200 shadow-md "

@@ -24,11 +24,11 @@ const CreatNFT = () => {
 
   return (
     <div>
-      <Breadcrumb links={["home", "createNFT"]} />
+      <Breadcrumb links={["explore", "createNFT"]} />
 
       <div className=" py-4 ">
         {/*Form*/}
-        <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white">
+        <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white responsive-header">
           Create Your NFT
         </h1>
         <p className="mb-8 text-primary dark:text-white">

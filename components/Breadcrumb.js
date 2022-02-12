@@ -11,7 +11,7 @@ const Breadcrumb = ({ links }) => {
           {links.map((l, index) => (
             <li key={index} className="inline-flex items-center">
               <a
-                href={l === "home" ? "/" : `${l}`}
+                href={l === "explore" ? "/" : `${l}`}
                 className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white font-light"
               >
                 <>

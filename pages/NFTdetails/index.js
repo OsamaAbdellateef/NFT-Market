@@ -14,9 +14,9 @@ const NFTS = [
 const NFTDetails = () => {
   return (
     <div>
-      <Breadcrumb links={["home", "explore", "beautiful Artwrok"]} />
+      <Breadcrumb links={["explore", "beautiful Artwrok"]} />
       <NFTDetailsCard />
-      <h1 className="font-semibold text-4xl mb-6">
+      <h1 className="font-semibold text-4xl mb-6 responsive-header-sm">
         Related Nfts Category See All
       </h1>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5">

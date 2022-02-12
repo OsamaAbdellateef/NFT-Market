@@ -13,7 +13,7 @@ import {
   SunIcon,
 } from "@heroicons/react/outline";
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
+  { name: "Explore", href: "#", current: true },
   { name: "create NFT", href: "createNFT", current: false },
   { name: "categories", href: "categories", current: false },
 ];
@@ -24,7 +24,7 @@ function classNames(...classes) {
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-primary">
+    <Disclosure as="nav" className="bg-primary main-navbar">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -143,7 +143,7 @@ const Navbar = () => {
                             <a
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700 dropdown-item items-center"
+                                "block px-4 py-2 text-sm text-gray-700 dropdown-item items-center hover:text-grey-500 link-hover"
                               )}
                             >
                               <img src="./d1.png" className="mr-2" />

@@ -67,13 +67,6 @@ const Popup = () => {
           </button>
         </form>
       </div>
-      <button
-        onClick={() => {
-          setShowModel(!showModel);
-        }}
-      >
-        show
-      </button>
     </>
   );
 };

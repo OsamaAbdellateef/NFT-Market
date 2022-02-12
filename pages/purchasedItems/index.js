@@ -5,9 +5,7 @@ import Card from "../../components/Card";
 const PurchasedItems = () => {
   return (
     <div>
-      <Breadcrumb
-        links={["home", "explore", "beautiful artwork", "Purchased Items"]}
-      />
+      <Breadcrumb links={["Explore", "beautiful artwork", "Purchased Items"]} />
       <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white">
         Purchased Items
       </h1>

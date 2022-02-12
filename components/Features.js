@@ -6,13 +6,15 @@ const Features = () => {
   return (
     <div>
       <div className="feature-container mt-40">
-        <h1 className="mb-20 font-semibold text-4xl text-primary dark:text-white text">
+        <h1 className="mb-20 font-semibold text-4xl text-primary dark:text-white text responsive-header">
           Create and sell your NFTs
         </h1>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-20 sm:grid-cols-1 sm:mb-10">
           <div className="feature-card">
             <div className=" feature-icon-container mb-5 ">
               <FontAwesomeIcon
+                stroke="black"
+                fill="#161a42"
                 className="text-primary dark:text-white"
                 icon={faAddressCard}
               />

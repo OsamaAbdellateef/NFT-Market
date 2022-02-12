@@ -29,13 +29,17 @@ const ThemeToggler = () => {
   return (
     <button
       type="button"
-      className="bg-gray-800 p-1 rounded-full text-gray-400 "
+      className={`p-1 rounded-full text-gray-400 ${
+        theme === "dark" ? "bg-white" : "bg-gray-800"
+      }`}
       onClick={() => {
         toggleTheme();
       }}
     >
       <span className="sr-only">View notifications</span>
       {dark ? (
+        <MoonIcon className="h-6 w-6" aria-hidden="true" fill="white" />
+      ) : (
         <SunIcon
           stroke="#fbbf24
 "
@@ -44,8 +48,6 @@ const ThemeToggler = () => {
           className="h-6 w-6"
           aria-hidden="true"
         />
-      ) : (
-        <MoonIcon className="h-6 w-6" aria-hidden="true" fill="white" />
       )}
     </button>
   );

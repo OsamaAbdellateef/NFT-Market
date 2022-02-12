@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import BuyButton from "./BuyButton";
 import Popup from "./Popup";
+import ResellButton from "./ResellButton";
 
 const Card = ({ item, img, buttonText }) => {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <motion.div className="nft-card" layout>
       <div className="nft-card-container">
@@ -33,9 +36,7 @@ const Card = ({ item, img, buttonText }) => {
           <h1>Account Address</h1>
           <span className="text-xs">Owner</span>
         </div>
-      </div>
-      <div style={{ textAlign: "center" }} className="buy-container">
-        <Popup />
+        <ResellButton />
       </div>
     </motion.div>
   );
