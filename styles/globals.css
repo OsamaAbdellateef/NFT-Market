@@ -264,6 +264,7 @@ body {
   background-color: var(--color-primary);
   border-radius: 20px;
   padding: 1rem;
+  box-shadow: 0 0 4px 2px #0000005e;
 }
 
 .nft-details {
@@ -465,10 +466,9 @@ body {
 }
 
 /*Popup*/
-/*
+
 .overlay {
   position: fixed;
-  width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.863);
   top: 0;
@@ -507,7 +507,7 @@ body {
   cursor: pointer;
   transition: var(--tran-md);
 }
-*/
+
 /*media queries */
 
 @media only screen and (max-width: 767px) {

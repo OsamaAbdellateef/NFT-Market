@@ -29,13 +29,24 @@ const ThemeToggler = () => {
   return (
     <button
       type="button"
-      className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+      className="bg-gray-800 p-1 rounded-full text-gray-400 "
       onClick={() => {
         toggleTheme();
       }}
     >
       <span className="sr-only">View notifications</span>
-      <SunIcon className="h-6 w-6" aria-hidden="true" />
+      {dark ? (
+        <SunIcon
+          stroke="#fbbf24
+"
+          fill="#fbbf24
+"
+          className="h-6 w-6"
+          aria-hidden="true"
+        />
+      ) : (
+        <MoonIcon className="h-6 w-6" aria-hidden="true" fill="white" />
+      )}
     </button>
   );
 };
