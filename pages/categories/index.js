@@ -4,7 +4,7 @@ import Category from "../../components/Category";
 const Categories = () => {
   return (
     <div>
-      <Category />
+      <Category buttonType="buyButton" />
     </div>
   );
 };

@@ -42,7 +42,7 @@ export default function Home() {
         Explore all NFTs and Start to Collect
       </h1>
 
-      <Category />
+      <Category buttonType="buy" />
     </div>
   );
 }

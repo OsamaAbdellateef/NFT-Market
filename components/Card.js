@@ -6,7 +6,7 @@ import BuyButton from "./BuyButton";
 import Popup from "./Popup";
 import ResellButton from "./ResellButton";
 
-const Card = ({ item, img, buttonText }) => {
+const Card = ({ item, img, btnText, buttonType }) => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ const Card = ({ item, img, buttonText }) => {
           <h1>Account Address</h1>
           <span className="text-xs">Owner</span>
         </div>
-        <ResellButton />
+        {buttonType === "buyButton" ? <BuyButton /> : <ResellButton />}
       </div>
     </motion.div>
   );
