@@ -27,7 +27,7 @@ const Card = ({ item, img, btnText, buttonType }) => {
           </div>
         </div>
         <div className="nft-details my-5">
-          <img src="./user-photo.jpg" />
+          <img src="./ethicon.png" />
           <h1 style={{ color: "#3DB6CE" }} className="ml-2">
             0,045 ETH
           </h1>
@@ -36,7 +36,11 @@ const Card = ({ item, img, btnText, buttonType }) => {
           <h1>Account Address</h1>
           <span className="text-xs">Owner</span>
         </div>
-        {buttonType === "buyButton" ? <BuyButton /> : <ResellButton />}
+        {buttonType === "buyButton" ? (
+          <BuyButton />
+        ) : buttonType === "resellButton" ? (
+          <ResellButton />
+        ) : null}
       </div>
     </motion.div>
   );

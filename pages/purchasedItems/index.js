@@ -28,6 +28,7 @@ const PurchasedItems = () => {
             key={Math.random()}
             img={`img${n}.png`}
             buttonText="Process to Resell"
+            buttonType="resellButton"
           />
         ))}
       </div>

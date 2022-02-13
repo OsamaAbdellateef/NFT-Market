@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import ThemeToggler from "../ThemeToggler";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
@@ -13,9 +14,9 @@ import {
   SunIcon,
 } from "@heroicons/react/outline";
 const navigation = [
-  { name: "Explore", href: "#", current: true },
-  { name: "create NFT", href: "createNFT", current: false },
-  { name: "categories", href: "categories", current: false },
+  { name: "Explore", href: "/", current: true },
+  { name: "create NFT", href: "/createNFT", current: false },
+  { name: "categories", href: "/categories", current: false },
 ];
 
 function classNames(...classes) {
@@ -23,6 +24,7 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <Disclosure as="nav" className="bg-primary main-navbar">
       {({ open }) => (
@@ -68,12 +70,11 @@ const Navbar = () => {
                         <a
                           key={item.name}
                           className={classNames(
-                            item.current
+                            item.href === router.asPath
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
-                          aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
                         </a>
@@ -89,16 +90,20 @@ const Navbar = () => {
                 <Menu as="div" className="user-button ml-3 relative">
                   <div>
                     <Menu.Button className=" flex text-sm rounded-full">
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="./profile.png"
-                        alt=""
-                      />
-                      <p className="account-address hide">
-                        account address
-                        <br />
-                        <span>3.25 ETH</span>
-                      </p>
+                      <Link href="myProfile">
+                        <>
+                          <img
+                            className="h-8 w-8 rounded-full"
+                            src="./profile.png"
+                            alt=""
+                          />
+                          <p className="account-address hide">
+                            account address
+                            <br />
+                            <span>3.25 ETH</span>
+                          </p>
+                        </>
+                      </Link>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -110,7 +115,7 @@ const Navbar = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-80 rounded-md shadow-lg px-8 py-1 bg-primary ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-80 rounded-md shadow-lg px-8 py-1 bg-primary ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
                       <Menu.Item>
                         {({ active }) => (
                           <Link href="/">
@@ -121,16 +126,22 @@ const Navbar = () => {
                               )}
                             >
                               <Menu.Button className=" flex items-center text-sm rounded-full">
-                                <img
-                                  className="h-8 w-8 rounded-full"
-                                  src="./profile.png"
-                                  alt=""
-                                />
-                                <p className="account-address">
-                                  account address
-                                  <br />
-                                  <span>3.25 ETH</span>
-                                </p>
+                                <>
+                                  <Link href="myProfile">
+                                    <a>
+                                      <img
+                                        className="h-8 w-8 rounded-full"
+                                        src="./profile.png"
+                                        alt=""
+                                      />
+                                      <p className="account-address">
+                                        account address
+                                        <br />
+                                        <span>3.25 2</span>
+                                      </p>
+                                    </a>
+                                  </Link>
+                                </>
                               </Menu.Button>
                             </a>
                           </Link>
@@ -158,7 +169,7 @@ const Navbar = () => {
                             <a
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700 dropdown-item"
+                                "block link-hover px-4 py-2 text-sm text-gray-700 dropdown-item"
                               )}
                             >
                               <img src="./d2.png" className="mr-2" />
@@ -173,7 +184,7 @@ const Navbar = () => {
                             <a
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700 dropdown-item"
+                                "block px-4 link-hover py-2 text-sm text-gray-700 dropdown-item"
                               )}
                             >
                               <img src="./d3.png" className="mr-2" />
@@ -192,19 +203,17 @@ const Navbar = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <Link href="#" key={item.name}>
-                  <Disclosure.Button
-                    as="a"
+                <Link href={item.href} key={item.name}>
+                  <a
                     className={classNames(
-                      item.current
+                      item.href === router.asPath
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
-                    aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </a>
                 </Link>
               ))}
             </div>

@@ -16,7 +16,6 @@ const mainData = [
 export default function Home({ buttonType }) {
   const [data, setData] = useState(mainData);
   const [category, setCategory] = useState("all");
-  const [priceTerm, setPriceTerm] = useState("none");
 
   const sortFunc = async (to, data) => {
     if (to === "up") {
@@ -38,11 +37,11 @@ export default function Home({ buttonType }) {
     } else {
       setData(filteredData);
     }
-  }, [category, priceTerm]);
+  }, [category]);
 
   return (
-    <div className="filter-container container  mx-auto  mt-2">
-      <ul className=" mt-10 filter-list flex flex-wrap border-b border-gray-200 dark:border-gray-700">
+    <div className="filter-container     mt-2">
+      <ul className=" mt-10 filter-list flex flex-wrap justify-center border-b border-gray-200 dark:border-gray-700">
         <li className="mr-2">
           <button
             href="#"

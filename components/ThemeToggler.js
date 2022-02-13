@@ -29,9 +29,7 @@ const ThemeToggler = () => {
   return (
     <button
       type="button"
-      className={`p-1 rounded-full text-gray-400 ${
-        theme === "dark" ? "bg-white" : "bg-gray-800"
-      }`}
+      className={`p-1 rounded-full bg-slate-700 dark:bg-white`}
       onClick={() => {
         toggleTheme();
       }}

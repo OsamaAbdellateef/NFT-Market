@@ -79,7 +79,7 @@ body {
 }
 
 .link-hover:hover {
-  color: rgb(30, 90, 200) !important;
+  color: rgb(65, 113, 202) !important;
 }
 
 nav.main-navbar {
@@ -87,7 +87,7 @@ nav.main-navbar {
 }
 
 .filter-container {
-  margin: 0 0;
+  margin: 0 !important;
 }
 
 .filter-list {
@@ -615,6 +615,59 @@ nav.main-navbar {
   .mymodal {
     min-width: 90% !important;
   }
+
+  .nft-count {
+    position: relative !important;
+    top: 2rem;
+    right: 0 !important;
+  }
+}
+
+/*my profile section*/
+.imgs-container {
+  position: relative;
+}
+
+.profile-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translateY(-50%);
+}
+
+.profile-img {
+  outline: 2px solid rgb(101, 116, 255);
+  outline-offset: -1.8rem;
+  border-radius: 50%;
+  width: 109px;
+  padding: 1.5rem;
+  flex-basis: 12%;
+}
+
+.dark .profile-img {
+  outline: 2px solid white;
+}
+
+.profile-details {
+  margin-top: -5rem;
+}
+
+.profile-details p {
+  max-width: 500px;
+}
+
+.nft-count {
+  position: absolute;
+  right: 1rem;
+}
+
+.nft-count span {
+  display: block;
+  width: 80%;
+  text-align: center;
+
+  padding: 0.5rem 0;
+  border-radius: 13px;
 }
 
 @media only screen and (max-width: 450px) {
