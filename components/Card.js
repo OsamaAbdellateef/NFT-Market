@@ -6,7 +6,7 @@ import BuyButton from "./BuyButton";
 import Popup from "./Popup";
 import ResellButton from "./ResellButton";
 
-const Card = ({ item, img, btnText, buttonType }) => {
+const Card = ({ item, img, btnText, buttonType, price }) => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -32,6 +32,7 @@ const Card = ({ item, img, btnText, buttonType }) => {
             0,045 ETH
           </h1>
         </div>
+        <h1>price : {price}</h1>
         <div className="account-address my-4">
           <h1>Account Address</h1>
           <span className="text-xs">Owner</span>

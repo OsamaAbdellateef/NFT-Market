@@ -649,7 +649,9 @@ nav.main-navbar {
 }
 
 .profile-details {
-  margin-top: -5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #827ff126;
+  margin-top: -4rem;
 }
 
 .profile-details p {

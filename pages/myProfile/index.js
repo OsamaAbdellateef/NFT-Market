@@ -6,7 +6,7 @@ const MyProfile = () => {
   return (
     <div>
       <Breadcrumb links={["home", "myProfile"]} />
-      <div className="imgs-container">
+      <div className="imgs-container mb-20">
         <img className="cover-img" src="./cover.png" />
         <div className="profile-img-container">
           <img className=" profile-img " src="./profile2.png" />

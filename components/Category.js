@@ -16,31 +16,49 @@ const mainData = [
 export default function Home({ buttonType }) {
   const [data, setData] = useState(mainData);
   const [category, setCategory] = useState("all");
-
-  const sortFunc = async (to, data) => {
-    if (to === "up") {
-      return await data.sort((a, b) => {
-        return a.price - b.price;
-      });
-    } else {
-      return await data.sort((a, b) => {
-        return b.price - a.price;
-      });
-    }
-  };
+  const [priceTerm, setPriceTerm] = useState("none");
 
   useEffect(() => {
-    const filteredData = mainData.filter((d) => d.category === category);
-
-    if (category === "all") {
-      setData(mainData);
+    console.log("current category : ", category);
+    var filteredData = [];
+    if (category !== "all") {
+      filteredData = mainData.filter((d) => d.category === category);
+      if (priceTerm === "none") {
+        setData(filteredData);
+      } else if (priceTerm === "high") {
+        setData(
+          [...filteredData].sort((a, b) => {
+            return b.price - a.price;
+          })
+        );
+      } else {
+        setData(
+          [...filteredData].sort((a, b) => {
+            return a.price - b.price;
+          })
+        );
+      }
     } else {
-      setData(filteredData);
+      if (priceTerm === "none") {
+        setData(mainData);
+      } else if (priceTerm === "high") {
+        setData(
+          [...mainData].sort((a, b) => {
+            return b.price - a.price;
+          })
+        );
+      } else {
+        setData(
+          [...mainData].sort((a, b) => {
+            return a.price - b.price;
+          })
+        );
+      }
     }
-  }, [category]);
+  }, [category, priceTerm]);
 
   return (
-    <div className="filter-container     mt-2">
+    <div className="filter-container mt-5 xs:mt-6">
       <ul className=" mt-10 filter-list flex flex-wrap justify-center border-b border-gray-200 dark:border-gray-700">
         <li className="mr-2">
           <button
@@ -95,7 +113,21 @@ export default function Home({ buttonType }) {
           </button>
         </li>
       </ul>
-
+      <div className="flex justify-center">
+        <select
+          onChange={(e) => {
+            console.log(e.target.value);
+            setPriceTerm(e.target.value);
+          }}
+          id="countries"
+          className="basis-60 bg-primary-light my-6 bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                 dark:border-gray-600 dark:placeholder-gray-400  "
+        >
+          <option value="none">default</option>
+          <option value="high">highest</option>
+          <option value="low">lowest</option>
+        </select>
+      </div>
       <motion.div
         animate={{ y: 30 }}
         className="mt-4 grid sm-grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-4"
@@ -106,6 +138,7 @@ export default function Home({ buttonType }) {
             img={`img${index + 1}.png`}
             item={d}
             buttonType={buttonType}
+            price={d.price}
           />
         ))}
       </motion.div>

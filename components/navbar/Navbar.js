@@ -125,10 +125,10 @@ const Navbar = () => {
                                 "block px-4 py-2 text-sm text-gray-700 dropdown-item"
                               )}
                             >
-                              <Menu.Button className=" flex items-center text-sm rounded-full">
+                              <Menu.Button className=" flex items-center text-sm rounded-full p-0">
                                 <>
                                   <Link href="myProfile">
-                                    <a>
+                                    <a className="flex">
                                       <img
                                         className="h-8 w-8 rounded-full"
                                         src="./profile.png"
