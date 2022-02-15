@@ -5,8 +5,8 @@ import Category from "../../components/Category";
 const MyProfile = () => {
   return (
     <div>
-      <Breadcrumb links={["home", "myProfile"]} />
-      <div className="imgs-container mb-20">
+      <Breadcrumb links={["explore", "myProfile"]} />
+      <div className="imgs-container ">
         <img className="cover-img" src="./cover.png" />
         <div className="profile-img-container">
           <img className=" profile-img " src="./profile2.png" />

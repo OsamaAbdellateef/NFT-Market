@@ -17,7 +17,7 @@ export default function Popup({ btnText }) {
   return (
     <div>
       <button className="resell-button" onClick={toggleModal}>
-        {btnText}
+        ⚡ {btnText}
       </button>
 
       <Modal

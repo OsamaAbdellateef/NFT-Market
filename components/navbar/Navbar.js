@@ -150,7 +150,7 @@ const Navbar = () => {
 
                       <Menu.Item>
                         {({ active }) => (
-                          <Link href="/">
+                          <Link href="purchasedItems">
                             <a
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -158,7 +158,7 @@ const Navbar = () => {
                               )}
                             >
                               <img src="./d1.png" className="mr-2" />
-                              Your Profile
+                              NFT Purchased
                             </a>
                           </Link>
                         )}

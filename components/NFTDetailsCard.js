@@ -8,21 +8,21 @@ const paragraph =
 const NFTDetails = () => {
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className="lg:p-5 slight-shadow  currency lg:gap-10  my-20  grid sm:grid-cols-1 md:grid-cols-8">
-      <div className="self-center currency-img col-span-3">
+    <div className="p-3 lg:p-5 mb-20 slight-shadow rounded flex md:flex-row flex-col justify-between ">
+      <div className="basis-2/5 currency-img col-span-3">
         <img src="./NFT details image.png" />
       </div>
       <div className="lg:p-5 flex-col justify-be currency-details col-span-4 text-2xl font-semibold">
         <h1 className=" lg:mt-1">Beautiful Artwork </h1>
-        <p className="text-base text-sky-400/50 mb-5">Collectibles</p>
+        <p className="text-base font-bold mb-5 text-primary">Collectibles</p>
         <p
-          className="font-normal text-sm text-slate-400 mb-5 leading-5"
+          className="font-normal text-sm text-slate-800 dark:text-slate-400 mb-5 leading-5"
           style={{ maxWidth: "350px" }}
         >
           {showMore ? paragraph : `${paragraph.substring(0, 250)}`}
           {paragraph.length > 200 && (
             <button
-              className="show-more text-normal text-white font-semibold underline ml-3"
+              className="show-more text-normal text-slate-500 font-semibold underline ml-3"
               onClick={() => {
                 setShowMore(!showMore);
               }}
@@ -38,7 +38,9 @@ const NFTDetails = () => {
               <span className="text-sm font-normal text-slate-500">
                 Owned By{" "}
               </span>
-              <p className="font-normal text-sm">Account Address</p>
+              <p className="font-normal text-sm text-primary dark:text-white">
+                Account Address
+              </p>
             </div>
           </div>
           <div className="flex">
@@ -47,16 +49,23 @@ const NFTDetails = () => {
               <span className="text-sm font-normal text-slate-500">
                 Owned By{" "}
               </span>
-              <p className="font-normal text-sm">Account Address</p>
+              <p className="font-normal text-sm text-primary dark:text-white">
+                Account Address
+              </p>
             </div>
           </div>
         </div>
         <button className="text-base buynow">buy now</button>
-        <button className="text-base share">share</button>
+        <button className="text-base share text-primary dark:text-white">
+          share
+        </button>
       </div>
 
       <div className="flex currency-price self-start mt-4 items-center flex-start">
-        <img className="mr-2" src="./ethicon.png" /> <span>453</span>
+        <img className="mr-2" src="./ethicon.png" />{" "}
+        <span className="text-teal-800 font-semibold dark:text-teal-400">
+          0.045 ETH
+        </span>
       </div>
     </div>
   );

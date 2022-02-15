@@ -9,7 +9,7 @@ const PurchasedItems = () => {
       <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white">
         Purchased Items
       </h1>
-      <div className="flex items-center mb-4">
+      <div className="flex items-center my-4">
         <img src="./purchased-icon-sm.png" />
         <p className="ml-2 text-normal text-primary dark:text-white">
           This is a descriptive sub-headline that introduces the whole content

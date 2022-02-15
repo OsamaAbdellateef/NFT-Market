@@ -16,12 +16,12 @@ const NFTDetails = () => {
     <div>
       <Breadcrumb links={["explore", "beautiful Artwrok"]} />
       <NFTDetailsCard />
-      <h1 className="font-semibold text-4xl mb-6 responsive-header-sm">
+      <h1 className="font-semibold text-4xl mb-6 responsive-header-sm text-primary dark:text-white">
         Related Nfts Category See All
       </h1>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
         {NFTS.map((n) => (
-          <Card img={n.img} />
+          <Card img={n.img} buttonType="buyButton" />
         ))}
       </div>
     </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Card from "../components/Card";
 import { motion } from "framer-motion";
 import BuyButton from "./BuyButton";
+import Link from "next/link";
 
 const mainData = [
   { name: "iPhone", category: "design", price: 123 },
@@ -13,7 +14,7 @@ const mainData = [
   { name: "iPod Touch", category: "fashion", price: 30 },
 ];
 
-export default function Home({ buttonType }) {
+export default function Category({ buttonType, seeAll, link }) {
   const [data, setData] = useState(mainData);
   const [category, setCategory] = useState("all");
   const [priceTerm, setPriceTerm] = useState("none");
@@ -128,6 +129,32 @@ export default function Home({ buttonType }) {
           <option value="low">lowest</option>
         </select>
       </div>
+      {seeAll ? (
+        <div className="seeAll text-right">
+          <Link href={`${link}`}>
+            <a
+              className="text-slate-500
+          hover:text-slate-800 hover:dark:text-slate-200 transition underline"
+            >
+              See all{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline h-6 w-6 slate-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#475569"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+          </Link>
+        </div>
+      ) : null}
       <motion.div
         animate={{ y: 30 }}
         className="mt-4 grid sm-grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-4"

@@ -200,7 +200,6 @@ nav.main-navbar {
 
 .header-button {
   margin: 1rem 1rem 0 0;
-  padding: 0.5rem 1rem;
   width: 8rem;
   border-radius: 20px;
   font-weight: 300;
@@ -208,7 +207,7 @@ nav.main-navbar {
 }
 
 .header-button:not(:first-of-type) {
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.171);
 }
 
 .header-button:not(:first-of-type):hover {
@@ -570,7 +569,7 @@ nav.main-navbar {
   padding: 0.5rem 1.5rem;
   font-weight: 300;
   transition: var(--tran-md);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .btn-hover:hover,
@@ -595,10 +594,10 @@ nav.main-navbar {
   }
 
   .header h1 {
-    font-size: 1.5rem !important;
+    font-size: 2.8rem !important;
     font-weight: bold;
-    line-height: 3rem;
   }
+
   .header p {
     font-size: 1.1rem !important;
     font-weight: 200;
@@ -688,5 +687,23 @@ nav.main-navbar {
 
   .custom-flex-wrap {
     flex-direction: column !important;
+  }
+
+  .header h1 {
+    text-align: center !important;
+    line-height: 2.4rem !important;
+    font-size: 1.9rem !important;
+  }
+
+  .header p {
+    text-align: center !important;
+  }
+
+  .top-newest div:first-child {
+    flex-direction: column;
+  }
+
+  .feature-card {
+    text-align: center;
   }
 }

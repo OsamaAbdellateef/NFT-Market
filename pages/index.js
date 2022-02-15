@@ -32,8 +32,6 @@ export default function Home() {
   useDarkMode();
   return (
     <div className="filter-container container mx-auto lg:px-8 ">
-      <div className="background"></div>
-
       <Header />
       <TopNewest />
       <Features />
@@ -42,7 +40,7 @@ export default function Home() {
         Explore all NFTs and Start to Collect
       </h1>
 
-      <Category buttonType="buy" />
+      <Category buttonType="buyButton" seeAll link="categories" />
     </div>
   );
 }

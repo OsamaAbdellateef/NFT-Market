@@ -14,7 +14,7 @@ const BuyButton = ({ wide, buttonText, medium, ...props }) => {
             wide ? "wide" : "medium"
           }`}
         >
-          {buttonText ? buttonText : "Buy Now"}
+          {buttonText ? buttonText : "⚡ Buy Now"}
         </button>
       </Link>
     </div>
