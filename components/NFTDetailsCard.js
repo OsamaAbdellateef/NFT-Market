@@ -13,8 +13,12 @@ const NFTDetails = () => {
         <img src="./NFT details image.png" />
       </div>
       <div className="lg:p-5 flex-col justify-be currency-details col-span-4 text-2xl font-semibold">
-        <h1 className=" lg:mt-1">Beautiful Artwork </h1>
-        <p className="text-base font-bold mb-5 text-primary">Collectibles</p>
+        <h1 className=" lg:mt-1 mt-5 text-primary dark:text-slate-300">
+          Beautiful Artwork{" "}
+        </h1>
+        <p className="text-base font-bold mb-5 text-primary dark:text-slate-300">
+          Collectibles
+        </p>
         <p
           className="font-normal text-sm text-slate-800 dark:text-slate-400 mb-5 leading-5"
           style={{ maxWidth: "350px" }}
