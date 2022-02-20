@@ -55,7 +55,7 @@ const CreatNFT = () => {
 
               <label
                 htmlFor="countries"
-                className="block mb-2 text-sm font-medium text-white"
+                className="block mb-2 text-sm font-medium text-primary dark:text-white"
               >
                 Chose Category
               </label>
