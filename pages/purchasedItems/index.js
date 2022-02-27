@@ -6,7 +6,7 @@ const PurchasedItems = () => {
   return (
     <div>
       <Breadcrumb links={["Explore", "beautiful artwork", "Purchased Items"]} />
-      <h1 className="mb-6 font-semibold text-4xl text-primary dark:text-white">
+      <h1 className="mb-6 font-semibold text-xl md:text-4xl text-primary dark:text-white">
         Purchased Items
       </h1>
       <div className="flex items-center my-4">

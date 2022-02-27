@@ -14,7 +14,7 @@ const Header = () => {
       <p className="text-primary dark:text-white text-lg mt-5">
         OpenSea is the world's first and largest NFT marketplace{" "}
       </p>
-      <div className="button-container mt-12">
+      <div className="button-container text-center md:text-left mt-12">
         <button className="header-button active btn-hover">
           <Link href="categories">
             <a className="w-full p-3 block">Collection</a>
