@@ -16,7 +16,7 @@ const Wrapper = ({ children }) => {
       </Head>
       <Navbar />
 
-      <div className="main-container flex justify-center sm:px-5 lg:px-10">
+      <div className="main-container container mx-auto  sm:px-5 lg:px-10">
         {children}
       </div>
       <Footer />

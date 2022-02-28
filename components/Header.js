@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="header md:ml-16 ">
+    <div className="header md:ml-16 container mx-auto ">
       <h1 className="font-semibold md:text-5xl text-primary dark:text-white">
         Discover, Collect, and
         <span className="block text-primary dark:text-white">

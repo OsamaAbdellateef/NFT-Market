@@ -81,10 +81,12 @@ const CreatNFT = () => {
                   <input
                     type="number"
                     id="price"
-                    className="bg-primary-light price-input bg-gray-50 border
-                    text-white border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="new price"
+                    className="bg-primary-light price-input bg-gray-50 border border-gray-300 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
-                  <span className="eth">ETH</span>
+                  <span className="popup-eth flex text-sm text-slate-500 font-semibold items-center newPrice-icon">
+                    ETH <img className="ml-2" src="./popup-icon.png" />
+                  </span>
                 </div>
               </div>
               <div className="mb-6">

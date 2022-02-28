@@ -26,10 +26,10 @@ function classNames(...classes) {
 const Navbar = () => {
   const router = useRouter();
   return (
-    <Disclosure as="nav" className="bg-primary main-navbar">
+    <Disclosure as="nav" className="bg-primary main-navbar ">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 container mx-auto">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
