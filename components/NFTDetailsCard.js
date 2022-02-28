@@ -8,7 +8,7 @@ const paragraph =
 const NFTDetails = () => {
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className="p-3 lg:p-5 mb-20 slight-shadow rounded flex md:flex-row flex-col justify-between ">
+    <div className="container p-3 lg:p-5 mb-20 slight-shadow rounded flex md:flex-row flex-col justify-between ">
       <div className="basis-2/5 currency-img col-span-3">
         <img src="./NFT details image.png" />
       </div>

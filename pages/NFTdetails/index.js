@@ -13,7 +13,7 @@ const NFTS = [
 
 const NFTDetails = () => {
   return (
-    <div>
+    <div style={{ maxWidth: "1200px" }}>
       <Breadcrumb links={["explore", "beautiful Artwrok"]} />
       <NFTDetailsCard />
       <h1 className="font-semibold text-4xl mb-6 responsive-header-sm text-primary dark:text-white">

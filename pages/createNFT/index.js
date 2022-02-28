@@ -23,7 +23,7 @@ const CreatNFT = () => {
   }, []);
 
   return (
-    <div>
+    <div className="basis-full mx-auto container ">
       <Breadcrumb links={["explore", "createNFT"]} />
 
       <div className=" py-4 ">

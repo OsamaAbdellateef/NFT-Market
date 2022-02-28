@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <footer className="custom-footer  p-20 mt-40">
-        <div className="md:flex md:justify-between">
+        <div className="md:flex md:justify-between container">
           <div style={{ maxWidth: "430px" }} className="mb-6 md:mb-0 ">
             <Link href="/">
               <a target="_blank" className="flex items-center">

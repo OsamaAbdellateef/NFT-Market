@@ -60,74 +60,76 @@ export default function Category({ buttonType, seeAll, link }) {
 
   return (
     <div className="filter-container mt-5 xs:mt-6">
-      <ul className=" mt-10 filter-list flex flex-wrap justify-center border-b border-gray-200 dark:border-gray-700">
-        <li className="mr-2">
-          <button
-            href="#"
-            onClick={() => {
-              setCategory("all");
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <ul className="  filter-list flex flex-wrap justify-center border-b border-gray-200 dark:border-gray-700">
+          <li className="mr-2">
+            <button
+              href="#"
+              onClick={() => {
+                setCategory("all");
+              }}
+              className={`${
+                category === "all" && "active"
+              } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
+            >
+              All
+            </button>
+          </li>
+          <li className="mr-2">
+            <button
+              href="#"
+              onClick={() => {
+                setCategory("design");
+              }}
+              className={`${
+                category === "design" && "active"
+              } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
+            >
+              Design
+            </button>
+          </li>
+          <li className="mr-2">
+            <button
+              href="#"
+              onClick={() => {
+                setCategory("entertainment");
+              }}
+              className={`${
+                category === "entertainment" && "active"
+              } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
+            >
+              Entertainment
+            </button>
+          </li>
+          <li className="mr-2">
+            <button
+              href="#"
+              onClick={() => {
+                setCategory("fashion");
+              }}
+              className={`${
+                category === "fashion" && "active"
+              } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
+            >
+              Fashion
+            </button>
+          </li>
+        </ul>
+        <div className="flex justify-center basis-1/5">
+          <select
+            onChange={(e) => {
+              console.log(e.target.value);
+              setPriceTerm(e.target.value);
             }}
-            className={`${
-              category === "all" && "active"
-            } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
-          >
-            All
-          </button>
-        </li>
-        <li className="mr-2">
-          <button
-            href="#"
-            onClick={() => {
-              setCategory("design");
-            }}
-            className={`${
-              category === "design" && "active"
-            } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
-          >
-            Design
-          </button>
-        </li>
-        <li className="mr-2">
-          <button
-            href="#"
-            onClick={() => {
-              setCategory("entertainment");
-            }}
-            className={`${
-              category === "entertainment" && "active"
-            } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
-          >
-            Entertainment
-          </button>
-        </li>
-        <li className="mr-2">
-          <button
-            href="#"
-            onClick={() => {
-              setCategory("fashion");
-            }}
-            className={`${
-              category === "fashion" && "active"
-            } list-button inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg`}
-          >
-            Fashion
-          </button>
-        </li>
-      </ul>
-      <div className="flex justify-center">
-        <select
-          onChange={(e) => {
-            console.log(e.target.value);
-            setPriceTerm(e.target.value);
-          }}
-          id="countries"
-          className="basis-60 bg-primary-light my-6 bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+            id="countries"
+            className="basis-60 bg-primary-light my-6 bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                  dark:border-gray-600 dark:placeholder-gray-400  "
-        >
-          <option value="none">default</option>
-          <option value="high">highest</option>
-          <option value="low">lowest</option>
-        </select>
+          >
+            <option value="none">default</option>
+            <option value="high">highest</option>
+            <option value="low">lowest</option>
+          </select>
+        </div>
       </div>
       {seeAll ? (
         <div className="seeAll text-right">
