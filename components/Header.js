@@ -12,7 +12,7 @@ const Header = () => {
         </span>
       </h1>
       <p className="text-primary dark:text-white text-lg mt-5">
-        OpenSea is the world's first and largest NFT marketplace{" "}
+        OpenSea is the worlds first and largest NFT marketplace{" "}
       </p>
       <div className="button-container text-center md:text-left mt-12">
         <button className="header-button active btn-hover">

@@ -9,7 +9,11 @@ const Footer = () => {
           <div className="md:flex md:justify-between container">
             <div style={{ maxWidth: "430px" }} className="mb-6 md:mb-0 ">
               <Link href="/">
-                <a target="_blank" className="flex items-center">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center"
+                >
                   <>
                     <img
                       src="./logo.png"
@@ -43,6 +47,7 @@ const Footer = () => {
                     <a
                       href="https://flowbite.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="text-gray-200 hover:underline "
                     >
                       About us
@@ -52,6 +57,7 @@ const Footer = () => {
                     <Link href="https://tailwindcss.com/">
                       <a
                         target="_blank"
+                        rel="noreferrer"
                         rel="nofollow"
                         className="text-gray-300 hover:underline "
                       >
@@ -70,6 +76,7 @@ const Footer = () => {
                     <a
                       href="https://github.com/themesberg/flowbite"
                       target="_blank"
+                      rel="noreferrer"
                       className="text-gray-300 hover:underline "
                     >
                       Github
@@ -79,6 +86,7 @@ const Footer = () => {
                     <a
                       href="https://discord.gg/4eeurUVvTy"
                       target="_blank"
+                      rel="noreferrer"
                       className="text-gray-300 hover:underline "
                     >
                       Discord
@@ -95,6 +103,7 @@ const Footer = () => {
                     <a
                       href="#"
                       target="_blank"
+                      rel="noreferrer"
                       className="text-gray-300 hover:underline "
                     >
                       Privacy Policy
@@ -104,6 +113,7 @@ const Footer = () => {
                     <a
                       href="#"
                       target="_blank"
+                      rel="noreferrer"
                       className="text-gray-300 hover:underline "
                     >
                       Terms &amp; Conditions
@@ -119,6 +129,7 @@ const Footer = () => {
               <a
                 href="https://flowbite.com"
                 target="_blank"
+                rel="noreferrer"
                 className="hover:underline"
               >
                 Flowbite™
